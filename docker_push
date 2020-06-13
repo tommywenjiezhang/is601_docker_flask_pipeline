@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "$HEROKU_AUTH_TOKEN" | sudo docker login -u "$HEROKU_DOCKER_USERNAME" --password-stdin registry.heroku.com
+sudo docker tag tommywenjiezhang/docker_python_pipeline_setup registry.heroku.com/docker-python-pipeline/web
+sudo docker push registry.heroku.com/docker-python-pipeline/web
