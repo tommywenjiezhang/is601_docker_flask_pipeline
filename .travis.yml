@@ -8,7 +8,7 @@ before_install:
 - docker build -t tommywenjiezhang/flask_docker_setup .
 script:
 - docker run -e CI=true --name docker_python_pipeline_setup tommywenjiezhang/flask_docker_setup
-- python -m pytest --cov=tests/
+- python3 -m pytest --cov=tests/
 deploy:
   provider: script
   script: bash docker_push
