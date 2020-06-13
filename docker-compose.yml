@@ -1,7 +1,8 @@
+version: '3'
 services: 
     web:
         build: .
-        container_name: pythondeploycontainer
+        container_name: flask-docker
         volumes: 
             - "./src:/opt/webapp"
         environment: 

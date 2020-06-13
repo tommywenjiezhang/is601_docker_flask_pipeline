@@ -1,9 +1,9 @@
 import os
-from . import create_app
-from flask import render_template
+from flask import render_template, Flask
 import pyfiglet
 from pystrich.qrcode import QRCodeEncoder
-app = create_app()
+
+app = Flask(__name__)
 
 
 @app.route('/')

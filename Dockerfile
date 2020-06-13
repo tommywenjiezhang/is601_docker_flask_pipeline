@@ -2,7 +2,9 @@
 FROM alpine:latest
 
 # Install python and pip
-RUN apk add --no-cache --update python3 py3-pip bash
+RUN apk add --no-cache --update build-base python3-dev py3-pip bash  
+RUN apk add jpeg-dev zlib-dev 
+ENV LIBRARY_PATH=/lib:/usr/lib
 ADD ./requirements.txt /tmp/requirements.txt
 
 # Install dependencies
