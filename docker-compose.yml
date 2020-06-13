@@ -1,0 +1,10 @@
+services: 
+    web:
+        build: .
+        container_name: pythondeploycontainer
+        volumes: 
+            - "./src:/opt/webapp"
+        environment: 
+            - PORT=5000
+        ports: 
+            - "8080:5000"

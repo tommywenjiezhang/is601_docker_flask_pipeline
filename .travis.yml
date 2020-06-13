@@ -1,0 +1,16 @@
+language: generic
+sudo: required
+services:
+- docker
+env:
+  - DOCKER_USERNAME=tommywenjiezhang
+before_install:
+- docker build -t tommywenjiezhang/flask_docker_setup .
+script:
+- docker run -e CI=true --name docker_python_pipeline_setup tommywenjiezhang/flask_docker_setup
+  pytest pytest --cov=tests/
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master
