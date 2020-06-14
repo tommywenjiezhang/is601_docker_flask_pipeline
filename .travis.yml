@@ -5,9 +5,9 @@ services:
 env:
   - DOCKER_USERNAME=tommywenjiezhang
 before_install:
-- docker build -t tommywenjiezhang/flask_docker_setup .
+- docker build -f Dockerfile.dev -t tommywenjiezhang/flask_dev  .
 script:
-- docker run -e CI=true --name docker_python_pipeline_setup tommywenjiezhang/flask_docker_setup python3 -m pytest
+- docker run -e CI=true --name docker_python_pipeline_setup tommywenjiezhang/flask_dev python3 -m pytest
   
 deploy:
   provider: script
