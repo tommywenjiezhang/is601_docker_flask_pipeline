@@ -1,4 +1,4 @@
 #!/bin/bash
 sudo docker login -u "$HEROKU_USERNAME" --password="$HEROKU_PASSWORD" registry.heroku.com
-sudo docker tag tommywenjiezhang/docker_python_pipeline_setup registry.heroku.com/docker-python-pipeline/web
-sudo docker push registry.heroku.com/docker-python-pipeline/web
+sudo docker tag tommywenjiezhang/docker_flask_pipeline_setup registry.heroku.com/docker-flask-pipeline/web
+sudo docker push registry.heroku.com/docker-flask-pipeline/web
